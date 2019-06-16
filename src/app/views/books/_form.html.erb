@@ -13,32 +13,32 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :book_title %>
+    <%= form.text_field :title, id: :book_title, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :image %>
-    <%= form.file_field :image %>
+    <%= form.file_field :image, required: true %>
   </div>
 
   <div class="field">
   <%= form.fields_for :publisher, @book.build_publisher do |pub_attr| %>
     <%= pub_attr.label :name  %>
-    <%= pub_attr.text_field :name %>
+    <%= pub_attr.text_field :name, required: true %>
     <br />
     <%= pub_attr.label :city  %>
-    <%= pub_attr.text_field :city %>
+    <%= pub_attr.text_field :city, required: true %>
   <% end %>
   </div>
 
   <div class="field">
     <%= form.label :format %>
-    <%= form.text_field :format %>
+    <%= form.text_field :format, required: true %>
   </div>
 
   <div class="field">
     <%= form.label :year_published %>
-    <%= form.text_field :year_published %>
+    <%= form.text_field :year_published, required: true %>
   </div>
 
   <div class="actions">
