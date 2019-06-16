@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Author.destroy_all
+Author.create(name: 'Tomi Adeyemi', email: 'Montez.Smith1@gmail.com', password:'cookies', password_confirmation: 'cookies' )
