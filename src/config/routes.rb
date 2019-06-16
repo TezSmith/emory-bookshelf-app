@@ -8,8 +8,8 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-  resources :authors do
-   resources :books
+  resources :authors, only: [:index,:show] do
+    resources :books, only: [:index, :new, :create, :show]
   end
 
 end
