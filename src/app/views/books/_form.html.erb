@@ -21,6 +21,26 @@
     <%= form.file_field :image %>
   </div>
 
+  <div class="field">
+  <%= form.fields_for :publisher, @book.build_publisher do |pub_attr| %>
+    <%= pub_attr.label :name  %>
+    <%= pub_attr.text_field :name %>
+    <br />
+    <%= pub_attr.label :city  %>
+    <%= pub_attr.text_field :city %>
+  <% end %>
+  </div>
+
+  <div class="field">
+    <%= form.label :format %>
+    <%= form.text_field :format %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year_published %>
+    <%= form.text_field :year_published %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

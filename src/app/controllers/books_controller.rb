@@ -14,11 +14,13 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    @book.build_publisher
   end
 
   def create
     @book = Book.new(book_params)
     @book.author = @author
+    @book.build_publisher(book_params[:publisher_attributes])
       if @book.save
        redirect_to author_book_path(@author,@book)
       else
@@ -38,7 +40,7 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:title, :image)
+      params.require(:book).permit(:title, :image, :format, publisher_attributes: [ :name, :city ])
     end
 
 end
