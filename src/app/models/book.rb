@@ -6,7 +6,7 @@ class Book < ApplicationRecord
 
   def get_citation
     # Last, First M. Book. City: Publisher, Year Published. Print.
-   "#{self.author_name}. #{self.title}. #{self.publisher_company}, #{self.year_published}. #{self.format}."
+   "#{self.author_name}. #{self.title}. #{self.publisher_company}."
   end
 
   def author_name
@@ -16,7 +16,7 @@ class Book < ApplicationRecord
 
   def publisher_company
     company = self.publisher
-    "#{company.city}: #{company.name}"
+    "#{company.city}: #{company.name}, #{company.year}. #{company.format}"
   end
 
 end

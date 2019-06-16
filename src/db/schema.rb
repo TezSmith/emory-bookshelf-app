@@ -53,13 +53,13 @@ ActiveRecord::Schema.define(version: 2019_06_16_164014) do
     t.integer "author_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "year_published"
-    t.string "format"
   end
 
   create_table "publishers", force: :cascade do |t|
     t.string "name"
     t.string "city"
+    t.string "year"
+    t.string "format"
     t.integer "book_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
