@@ -7,5 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 Author.destroy_all
 Book.destroy_all
-tomi = Author.create(name: 'Tomi Adeyemi', email: 'Montez.Smith1@gmail.com', password:'cookies', password_confirmation: 'cookies' )
-Book.create(title: "Children of Blood & Bone", author_id: tomi.id)
+tomi = Author.create(first_name: 'Tomi', last_name: 'Adeyemi', middle_name: '', email: 'Montez.Smith1@gmail.com', password:'cookies', password_confirmation: 'cookies' )

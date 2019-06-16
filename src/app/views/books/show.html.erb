@@ -5,14 +5,17 @@
   <%= @book.title %>
 </p>
 
-
 <p>
   <strong>Cover</strong>
   <%= image_tag(@book.image) %>
 </p>
 
-
 <p>
   <strong>Author:</strong>
-  <%= @book.author.name %>
+  <%= @book.author.full_name %>
+</p>
+
+<p>
+  <strong>Citation MLA Format:</strong>
+  <%= @book.get_citation %>
 </p>
