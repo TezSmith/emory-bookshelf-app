@@ -11,7 +11,7 @@ class Book < ApplicationRecord
 
   def author_name
     author = self.author
-    "#{author.last_name}, #{author.first_name} #{author.middle_name}"
+    "#{author.last_name}, #{author.first_name} #{author.middle_name}".strip
   end
 
   def publisher_company
