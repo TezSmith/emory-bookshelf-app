@@ -1,15 +1,19 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  devise_for :authors
-  devise_scope :author do
-    get 'login', to: "devise/sessions#new", as: "login"
-    get 'logout', to: "devise/sessions#destroy", as: "logout"
-  end
+ root to: 'welcome#index'
 
-  root to: "welcome#index"
+ devise_for :authors
 
-  resources :authors, only: [:index,:show] do
-    resources :books, only: [:index, :new, :create, :show]
-  end
+ devise_scope :author do
+  get 'login', to: 'devise/sessions#new'
+  get 'sign up', to: 'devise/registrations#new'
+  get 'logout', to: 'devise/sessions#destroy'
+ end
+
+ resources :authors, only: [:index, :show] do
+   resources :books, only: [:index, :new, :create, :show]
+ end
+
 
 end
