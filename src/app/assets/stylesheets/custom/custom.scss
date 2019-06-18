@@ -96,4 +96,9 @@
   text-align: center;
 }
  /* STYLES FOR SINGLE BOOK PAGE */
- 
+ .book-image {
+   height: 400px;
+   width: 85%;
+   object-fit: cover;
+
+ }

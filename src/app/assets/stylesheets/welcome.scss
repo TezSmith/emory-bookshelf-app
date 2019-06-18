@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+/* STYLES FOR WELCOME */
+
+
+
 .jumbotron {
    height: 100vh;
  }
@@ -11,9 +15,16 @@
  .welcome {
    background: url('bookshop.jpg') no-repeat center center;
    background-size: cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
  }
 
- /* Centers login & sign in buttons */
- .enter {
+ .greeting  {
+   color: white;
    text-align: center;
  }
+ /* Centers login & sign in buttons */
+ // .enter {
+ //   text-align: center;
+ // }

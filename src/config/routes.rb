@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
  root to: 'welcome#index'
 
- devise_for :authors
+ # devise_for :authors
+ devise_for :authors, controllers: { registrations: "authors/registrations" }
 
  devise_scope :author do
   get 'login', to: 'devise/sessions#new'
