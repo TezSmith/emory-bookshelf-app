@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
  devise_scope :author do
   get 'login', to: 'devise/sessions#new'
-  get 'sign up', to: 'devise/registrations#new'
+  get 'register', to: 'devise/registrations#new'
   get 'logout', to: 'devise/sessions#destroy'
  end
 
