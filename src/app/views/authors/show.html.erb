@@ -1,8 +1,38 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @author.full_name %>
-</p>
+  <p id="notice"><%= notice %></p>
+
+  <section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">
+        Welcome, <%= @author.first_name %>!
+      </h1>
+      <p class="lead text-muted"> Take a moment to check out your library, add a book, <br/> or get a MLA snippet if you need to reference your work! </p>
+      <p>
+        <%= link_to 'Create A New Book', new_author_book_path([@author, @book]), :class => "btn btn-primary my-2" %>
+      </p>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <h1 class="jumbotron-heading pb-4">Your Bookshelf</h1>
+    <div class="container">
+      <div class="row">
+        <% @author.books.each do |book| %>
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <%= image_tag book.image, class: "card_image" %>
+            <div class="card-body">
+              <p class="card-text"> <%= book.get_citation %> </p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          <% end %>
+      </div>
 
 <%= link_to 'Back', authors_path %>

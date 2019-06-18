@@ -1,0 +1,87 @@
+/* STYLES FOR LOGIN & REGISTRATION */
+
+.container>h2 {
+  text-align: center;
+}
+
+.form-signin {
+   width: 100%;
+   max-width: 250px;
+   padding: 15px;
+   margin: auto 0;
+ }
+
+ .form-signin .checkbox {
+   font-weight: 400;
+ }
+ .form-signin .form-control {
+   position: relative;
+   box-sizing: border-box;
+   height: auto;
+   padding: 10px;
+   font-size: 16px;
+ }
+ .form-signin .form-control:focus {
+   z-index: 2;
+ }
+ .form-signin input[type="email"] {
+   margin-bottom: -1px;
+   border-bottom-right-radius: 0;
+   border-bottom-left-radius: 0;
+ }
+ .form-signin input[type="password"] {
+   margin-bottom: 10px;
+   border-top-left-radius: 0;
+   border-top-right-radius: 0;
+ }
+
+ /* STYLES FOR PROFILE PAGE */
+
+ section.jumbotron {
+   height: 300px;
+ }
+
+ .jumbotron {
+   padding-top: 3rem;
+   padding-bottom: 3rem;
+   margin-bottom: 0;
+   background-color: #fff;
+ }
+
+ @media (min-width: 768px) {
+   .jumbotron {
+     padding-top: 6rem;
+     padding-bottom: 6rem;
+   }
+ }
+
+ .jumbotron p:last-child {
+   margin-bottom: 0;
+ }
+
+ .jumbotron-heading {
+   font-weight: 300;
+ }
+
+ .jumbotron .container {
+   max-width: 40rem;
+ }
+
+ .album > h1 {
+   text-align: center;
+ }
+
+
+ .card {
+   display: flex;
+ }
+
+ .card_image {
+   width: 100%;
+   height: 30vw;
+   object-fit: cover;
+ }
+
+ .text-muted {
+   line-height: 1.5em;
+ }
