@@ -1,44 +1,47 @@
-<%= form_for([@author,@book]) do |form| %>
-  <% if @book.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
+<div class="container">
+  <%= form_for([@author,@book], class: "form-signin") do |form| %>
+    <% if @book.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@book.errors.count, "error") %> prohibited this book from being saved:</h2>
 
-      <ul>
-      <% @book.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @book.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= form.label "Book Title" %>
+      <%= form.text_field :title, id: :book_title, required: true, class: "form-control" %>
+    </div>
+
+    <div class="field">
+      <%= form.label "Please Upload Your Book Cover:" %><br/>
+      <%= form.file_field :image, required: true %>
+    </div>
+
+    <div class="field">
+    <%= form.fields_for :publisher, @book.build_publisher do |pub_attr| %>
+      <%= pub_attr.label "Publishing Company Name"  %>
+      <%= pub_attr.text_field :name, required: true, class: "form-control" %>
+      <br />
+      <%= pub_attr.label "Publishing Company Location" %>
+      <%= pub_attr.text_field :city, required: true, class: "form-control" %>
+      <br />
+      <%= pub_attr.label "Year of Publication"  %>
+      <%= pub_attr.text_field :year, required: true, class: "form-control" %>
+      <br />
+      <%= pub_attr.label "Publication Medium:"  %>
+      <%= pub_attr.text_field :format, required: true, class: "form-control" %>
+    <% end %>
+    </div>
+
+
+    <div class="actions">
+      <%= form.submit "Submit", class: "btn btn-lg btn-primary" %>
+      <%= link_to 'Back', author_path(@author), class: "btn btn-lg btn-secondary" %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label "Book Title" %>
-    <%= form.text_field :title, id: :book_title, required: true %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Please Upload Your Book Cover" %>
-    <%= form.file_field :image, required: true %>
-  </div>
-
-  <div class="field">
-  <%= form.fields_for :publisher, @book.build_publisher do |pub_attr| %>
-    <%= pub_attr.label "Publishing Company Name"  %>
-    <%= pub_attr.text_field :name, required: true %>
-    <br />
-    <%= pub_attr.label "Publishing Company Location" %>
-    <%= pub_attr.text_field :city, required: true %>
-    <br />
-    <%= pub_attr.label "Year of Publication"  %>
-    <%= pub_attr.text_field :year, required: true %>
-    <br />
-    <%= pub_attr.label "Publication Medium:"  %>
-    <%= pub_attr.text_field :format, required: true %>
-  <% end %>
-  </div>
-
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
