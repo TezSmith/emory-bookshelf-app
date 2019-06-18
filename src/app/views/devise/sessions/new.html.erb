@@ -1,27 +1,35 @@
 
-<div class="container mt-4">
-  <h2>Log in</h2>
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin" ) do |f| %>
-    <div class="field">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 main">
     </div>
+    <div class="col-md-6 h-md-100 ">
+    <div class="h-md-75 p-5 justify-content-center">
+      <h2>Log in</h2>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-signin" ) do |f| %>
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        </div>
 
-    <div class="field">
-      <%= f.label :password %><br />
-      <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        <div class="field">
+          <%= f.label :password %><br />
+          <%= f.password_field :password, autocomplete: "current-password", class: "form-control" %>
+        </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field checkbox mb-3">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+
+        <div class="actions">
+          <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
     </div>
-
-    <% if devise_mapping.rememberable? %>
-      <div class="field checkbox mb-3">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end %>
-
-    <div class="actions">
-      <%= f.submit "Log in", class: "btn btn-lg btn-primary btn-block" %>
-    </div>
-  <% end %>
-  <%= render "devise/shared/links" %>
+  </div>
+ </div>
 </div>
