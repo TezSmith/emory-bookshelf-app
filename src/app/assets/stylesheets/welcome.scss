@@ -23,8 +23,14 @@
  .greeting  {
    color: white;
    text-align: center;
+   text-shadow: 1px 1px 1px #000;
+   z-index: 100;
  }
- /* Centers login & sign in buttons */
- // .enter {
- //   text-align: center;
- // }
+
+ .overlay {
+   height: 100%;
+   width: 100%;
+   color: #000000;
+   position: absolute;
+   opacity: .9;
+ }

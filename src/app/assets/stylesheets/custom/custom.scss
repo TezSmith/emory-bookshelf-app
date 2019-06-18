@@ -39,9 +39,22 @@
 
  section.jumbotron {
    height: 300px;
+   background: url('../hand.jpg') no-repeat center center;
+   background-size: cover;
+ }
+
+ .profile {
+   color: white;
+   text-shadow: 1px 1px 1px #000 solid;
+ }
+
+ p.lead.text-muted {
+   color: white!important;
+   text-shadow: 1px 1px 1px #000 solid;
  }
 
  .jumbotron {
+
    padding-top: 3rem;
    padding-bottom: 3rem;
    margin-bottom: 0;
@@ -95,10 +108,22 @@
 .form-back {
   text-align: center;
 }
+
+
+
  /* STYLES FOR SINGLE BOOK PAGE */
- .book-image {
+.book-image {
    height: 400px;
    width: 85%;
    object-fit: cover;
+}
 
- }
+/* Controls links */
+
+.btn-primary:visited {
+  color: white;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    background-color: transparent;
+}
