@@ -6,7 +6,7 @@ An app that allows authors to add & track their own publications.
 Ruby on Rails using RESTful MVC conventions and CRUD capabilities.
 
 ### Requirements
-Ruby 2.6.1, Postgres
+Ruby 2.6.1, Postgres DB
 
 ### Installation
 To install this app, clone this repository and cd into the src file from your terminal. Then run these commands: bundle install, rake db:migrate, rails s
